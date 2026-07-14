@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorDot = document.getElementById('custom-cursor');
     const cursorGlow = document.getElementById('custom-cursor-glow');
 
+    // Detect touch input to disable custom cursor on touch/hybrid screens
+    document.addEventListener('touchstart', function onFirstTouch() {
+        document.body.classList.add('touch-device');
+        document.removeEventListener('touchstart', onFirstTouch);
+    }, { passive: true });
+
     if (cursorDot && cursorGlow) {
         document.body.classList.add('custom-cursor-enabled');
         let mouseX = 0;
@@ -274,6 +280,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 navWrapper.classList.remove('active');
                 document.body.style.overflow = '';
             });
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (navWrapper.classList.contains('active') && 
+                !navWrapper.contains(e.target) && 
+                !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navWrapper.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 

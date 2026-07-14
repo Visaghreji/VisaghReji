@@ -231,11 +231,19 @@ body.custom-cursor-enabled * {
 /* Hide on touchscreen devices */
 @media (hover: none) and (pointer: coarse) {
     .custom-cursor, .custom-cursor-glow {
-        display: none;
+        display: none !important;
     }
     * {
-        cursor: auto;
+        cursor: auto !important;
     }
+}
+
+body.touch-device .custom-cursor,
+body.touch-device .custom-cursor-glow {
+    display: none !important;
+}
+body.touch-device * {
+    cursor: auto !important;
 }
 
 /* --- Sticky Navigation Bar --- */
@@ -1843,25 +1851,84 @@ section {
 
 /* Mobile Devices */
 @media (max-width: 480px) {
+    section {
+        padding: 4rem 1.25rem;
+    }
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 2.5rem;
+    }
     .hero-greeting { font-size: 2.4rem; }
     .hero-typing-wrapper { font-size: 1.4rem; height: 50px; }
     .hero-cta-buttons {
         flex-direction: column;
         width: 100%;
+        gap: 0.85rem;
     }
     .hero-cta-buttons .btn {
         width: 100%;
     }
+    .hero-tech-showcase {
+        transform: scale(0.8);
+        transform-origin: center;
+        margin: -2rem 0;
+    }
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    .stat-card {
+        padding: 1rem 0.75rem;
+        text-align: center;
+    }
+    .stat-number {
+        font-size: 1.8rem;
     }
     .skills-grid {
         grid-template-columns: 1fr;
     }
+    .skills-category-card {
+        padding: 1.25rem;
+    }
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .project-info {
+        padding: 1.25rem;
+    }
+    .timeline-item {
+        padding-left: 35px;
+    }
+    .timeline-line {
+        left: 15px;
+    }
+    .timeline-item.left .timeline-dot, .timeline-item.right .timeline-dot {
+        left: 7px;
+    }
+    .timeline-card {
+        padding: 1.25rem;
+    }
+    .certificate-card {
+        padding: 1.25rem;
     }
     .contact-form-panel {
         padding: 1.5rem;
+    }
+}
+
+/* Very Small Mobile Devices (e.g., iPhone SE, Galaxy Fold) */
+@media (max-width: 360px) {
+    .hero-greeting { font-size: 2.1rem; }
+    .hero-typing-wrapper { font-size: 1.2rem; height: 45px; }
+    .hero-tech-showcase {
+        transform: scale(0.72);
+        margin: -3rem 0;
+    }
+    .loader-content {
+        width: 280px;
+    }
+    .scanner-logo {
+        font-size: 2.8rem;
     }
 }
