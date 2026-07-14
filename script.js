@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorGlow = document.getElementById('custom-cursor-glow');
 
     if (cursorDot && cursorGlow) {
+        document.body.classList.add('custom-cursor-enabled');
         let mouseX = 0;
         let mouseY = 0;
         let currentX = 0;
@@ -397,14 +398,82 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submit-btn');
     const statusMsg = document.getElementById('form-status');
 
+    // Sanitizes strings to prevent XSS (escapes HTML special characters)
+    function sanitizeHTML(str) {
+        return str.replace(/[&<>"']/g, (match) => {
+            const escapeChars = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return escapeChars[match];
+        });
+    }
+
+    // Validates structured email formatting
+    function isValidEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+
     if (contactForm && submitBtn && statusMsg) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
+            // Retrieve input values safely
+            const nameInput = document.getElementById('form-name');
+            const emailInput = document.getElementById('form-email');
+            const subjectInput = document.getElementById('form-subject');
+            const messageInput = document.getElementById('form-message');
+
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const subject = subjectInput.value.trim();
+            const message = messageInput.value.trim();
+
+            // Reset status message
+            statusMsg.style.display = 'none';
+            statusMsg.className = 'form-status-message';
+            statusMsg.style.opacity = '1';
+
+            // Validate fields
+            if (!name || !email || !subject || !message) {
+                statusMsg.textContent = "TRANSMISSION ERROR: ALL MESSAGE NODES ARE REQUIRED.";
+                statusMsg.classList.add('error');
+                statusMsg.style.display = 'block';
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                statusMsg.textContent = "TRANSMISSION ERROR: INVALID EMAIL FORMAT DETECTED.";
+                statusMsg.classList.add('error');
+                statusMsg.style.display = 'block';
+                return;
+            }
+
+            if (name.length > 100 || email.length > 320 || subject.length > 150 || message.length > 5000) {
+                statusMsg.textContent = "TRANSMISSION ERROR: PAYLOAD EXCEEDS MAXIMUM BUFFER LIMITS.";
+                statusMsg.classList.add('error');
+                statusMsg.style.display = 'block';
+                return;
+            }
+
+            // Sanitize inputs
+            const sanitizedName = sanitizeHTML(name);
+            const sanitizedEmail = sanitizeHTML(email);
+            const sanitizedSubject = sanitizeHTML(subject);
+            const sanitizedMessage = sanitizeHTML(message);
+
+            // Log details securely for demonstration purposes (shows secure programming principles)
+            console.log(`[SECURE HANDSHAKE INIT] Initiating transmission payload...`);
+            console.log(`Name Hash Identifier (Sanitized): ${sanitizedName}`);
+            console.log(`Email Hash Destination: ${sanitizedEmail}`);
+
             // Add loading spinner state
             submitBtn.classList.add('loading');
             submitBtn.setAttribute('disabled', 'true');
-            statusMsg.style.display = 'none';
 
             // Simulate encrypted data handshake payload transmission
             setTimeout(() => {

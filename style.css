@@ -37,7 +37,6 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    cursor: none; /* Custom Cursor */
 }
 
 body {
@@ -189,6 +188,10 @@ img {
 }
 
 /* --- Custom Cursor Followers --- */
+body.custom-cursor-enabled * {
+    cursor: none;
+}
+
 .custom-cursor {
     width: 8px;
     height: 8px;
@@ -1553,7 +1556,6 @@ section {
     box-shadow: var(--glow-cyan);
     border: none;
     border-radius: 8px;
-    cursor: none;
 }
 
 .btn-submit:hover {
