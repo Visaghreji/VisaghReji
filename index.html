@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visagh Reji - Personal Portfolio. Cybersecurity Enthusiast, Ethical Hacker, Full Stack Developer, and AI Engineer. Discover my projects, certifications, and skills.">
+    <title>Visagh Reji | Cybersecurity & AI Engineer Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="preloader" class="preloader">
+        <div class="loader-content">
+            <div class="scanner-logo">
+                <span class="logo-text">VR</span>
+                <div class="scanner-line"></div>
+            </div>
+            <div class="loader-status">
+                <span class="status-title">INITIALIZING SECURE SESSION</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="loader-progress"></div>
+                </div>
+                <div class="status-percentage" id="loader-percentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-glow" id="custom-cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-accent">&lt;</span>Visagh Reji<span class="logo-accent"> /&gt;</span>
+            </a>
+            
+            <div class="nav-links-wrapper" id="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <canvas id="particle-canvas" class="particle-canvas"></canvas>
+        <div class="hero-grid-overlay"></div>
+        <div class="floating-glow-circles">
+            <div class="glow-circle gc-1"></div>
+            <div class="glow-circle gc-2"></div>
+            <div class="glow-circle gc-3"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="pulse-dot"></span>
+                    <span class="hero-badge">Available for opportunities</span>
+                </div>
+                <h1 class="hero-greeting">Hi, I'm <span class="highlight-text">Visagh Reji</span></h1>
+                <div class="hero-typing-wrapper">
+                    <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span>
+                </div>
+                <p class="hero-subtitle">I build secure, intelligent, and scalable applications.</p>
+                
+                <div class="hero-cta-buttons">
+                    <a href="#projects" class="btn btn-primary ripple-btn">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary ripple-btn">Contact Me</a>
+                    <a href="#" class="btn btn-tertiary ripple-btn" download>
+                        <span>Download Resume</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18">
+                            <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v5h6v-5h3.67L12 2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Tech Badges Container -->
+            <div class="hero-tech-showcase">
+                <div class="tech-orb-container">
+                    <div class="tech-orb-center">
+                        <div class="cyber-pulse-rings"></div>
+                        <div class="avatar-glow"></div>
+                    </div>
+                    <!-- Orbiting floating tech icons -->
+                    <div class="tech-badge floating-icon py-badge" data-tech="Python">
+                        <svg viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#3776AB" d="M14.25.18a8.8 8.8 0 0 0-4.3 1.02c-3.72 2.1-3.6 5.6-3.6 5.6h3.6s.4 0 .6.2c.2.2.2.6.2.6v3.6h4.8s.6 0 .8-.2c.2-.2.2-.6.2-.6V6.8s0-3.6-3.6-3.6h-.6S14.25.18 14.25.18z"/>
+                            <path fill="#FFE052" d="M9.75 23.82a8.8 8.8 0 0 0 4.3-1.02c3.72-2.1 3.6-5.6 3.6-5.6h-3.6s-.4 0-.6-.2c-.2-.2-.2-.6-.2-.6v-3.6H8.45s-.6 0-.8.2c-.2.2-.2.6-.2.6v3.6s0 3.6 3.6 3.6h.6s.05.02.05.02z"/>
+                        </svg>
+                    </div>
+                    <div class="tech-badge floating-icon html-badge" data-tech="HTML">
+                        <svg viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#E34F26" d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0z"/>
+                            <path fill="#EF652A" d="M12 2.2v19.5l6.9-1.9 1.6-17.6H12z"/>
+                            <path fill="#EBEBEB" d="M12 10.7H8.8l-.2-2.3h3.4V6.1H6.1l.6 6.9H12v-2.3z"/>
+                            <path fill="#EBEBEB" d="M12 16.3l-2.7-.7-.2-1.9H6.8l.3 4.1 4.9 1.4v-2.9z"/>
+                            <path fill="#FFFFFF" d="M12 10.7h3.2l-.3 3.6-2.9.8v2.9l4.9-1.4.6-6.6H12v-2.3z"/>
+                            <path fill="#FFFFFF" d="M12 6.1h5.6l-.2 2.3H12v-2.3z"/>
+                        </svg>
+                    </div>
+                    <div class="tech-badge floating-icon css-badge" data-tech="CSS">
+                        <svg viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#1572B6" d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0z"/>
+                            <path fill="#33A9DC" d="M12 2.2v19.5l6.9-1.9 1.6-17.6H12z"/>
+                            <path fill="#EBEBEB" d="M12 10.7H8.8l-.2-2.3h3.4V6.1H6.1l.6 6.9H12v-2.3z"/>
+                            <path fill="#EBEBEB" d="M12 16.3l-2.7-.7-.2-1.9H6.8l.3 4.1 4.9 1.4v-2.9z"/>
+                            <path fill="#FFFFFF" d="M12 10.7h3.2l-.3 3.6-2.9.8v2.9l4.9-1.4.6-6.6H12v-2.3z"/>
+                            <path fill="#FFFFFF" d="M12 6.1h5.6l-.2 2.3H12v-2.3z"/>
+                        </svg>
+                    </div>
+                    <div class="tech-badge floating-icon js-badge" data-tech="JavaScript">
+                        <svg viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#F7DF1E" d="M0 0h24v24H0z"/>
+                            <path fill="#000000" d="M20.1 16.4c-.7-.4-1.5-.7-2.4-.7-1.1 0-1.8.5-1.8 1.2 0 2 3.1 1.7 3.1 4.2 0 1.6-1.3 2.7-3.3 2.7-1.7 0-2.8-.8-3.4-1.7l1.7-1.1c.4.6 1 1 1.7 1 1 0 1.4-.4 1.4-1.1 0-2-3.1-1.6-3.1-4.2 0-1.7 1.4-2.6 3.3-2.6 1.4 0 2.5.5 3.1 1.2l-1.8 1zM11 10.2v11.6c0 1.2-.7 1.8-1.7 1.8-1 0-1.6-.6-1.6-1.8V10.2H11zm-1.8-3.3c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2-1.2-.5-1.2-1.2.5-1.2 1.2-1.2z"/>
+                        </svg>
+                    </div>
+                    <div class="tech-badge floating-icon tux-badge" data-tech="Linux">
+                        <svg viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#FCC624" d="M12 0c-3.1 0-5.7 2.1-6.7 5.1-.3-.1-.7-.1-1 0-1.4.5-2.2 2-1.8 3.5.2.8.7 1.4 1.4 1.7-.5 2.1-.2 4.3.7 6.3l-1.3 2.1c-.5.8-.3 1.9.5 2.4s1.9.3 2.4-.5l1-1.6c1.6.8 3.3 1.1 5.1 1.1 1.9 0 3.8-.4 5.4-1.2l.9 1.5c.5.8 1.6 1.1 2.4.5.8-.5 1.1-1.6.5-2.4l-1.2-2c.9-2 1.2-4.2.7-6.3.7-.3 1.2-.9 1.4-1.7.4-1.5-.4-3-1.8-3.5-.3-.1-.7-.1-1 0C17.7 2.1 15.1 0 12 0z"/>
+                        </svg>
+                    </div>
+                    <div class="tech-badge floating-icon git-badge" data-tech="Git">
+                        <svg viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#F05032" d="M23.3 10.9L13.1.7C12.3-.2 11-.2 10.1.7L8 2.8l2.9 2.9c.7-.2 1.5 0 2 .5.6.6.7 1.4.3 2.1l2.9 2.9c.7-.3 1.5-.2 2.1.3.8.8.8 2.1 0 2.9s-2.1.8-2.9 0c-.5-.5-.7-1.3-.4-2L12 9.5c-.3.3-.7.4-1.1.4s-.8-.1-1.1-.4c-.6-.6-.7-1.5-.3-2.1L6.6 4.5.7 10.4c-.9.9-.9 2.4 0 3.3l10.2 10.2c.9.9 2.4.9 3.3 0l9.1-9.1c.9-.9.9-2.4 0-3.3z"/>
+                        </svg>
+                    </div>
+                    <div class="tech-badge floating-icon ai-badge" data-tech="AI">
+                        <svg viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#7C3AED" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-3.5h-2V7h2z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title"><span class="number-tag">01.</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-image-container">
+                    <div class="about-glow-bg"></div>
+                    <div class="image-frame">
+                        <img src="profile.png" alt="Visagh Reji" class="profile-img">
+                        <div class="cyber-border-corners"></div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <p class="bio-paragraph">
+                        I am passionate about <span class="highlight-cyan">Cybersecurity</span>, <span class="highlight-purple">Artificial Intelligence</span>, Machine Learning, and Full Stack Development. I enjoy solving complex problems and building secure software solutions.
+                    </p>
+                    <p class="bio-paragraph">
+                        My approach merges advanced cryptographic systems and defenses with deep neural networks. I strive to create robust architectures that defend against modern exploit vectors while scaling intelligently to support massive data workloads.
+                    </p>
+
+                    <!-- Statistics Grid -->
+                    <div class="stats-grid" id="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Certificates</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="35">0</div>
+                            <div class="stat-label">GitHub Repos</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="4">0</div>
+                            <div class="stat-label">Years Journey</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title"><span class="number-tag">02.</span> Technical Skills</h2>
+            <div class="skills-grid">
+                
+                <!-- Category: Programming -->
+                <div class="skills-category-card">
+                    <div class="category-header">
+                        <span class="category-icon">⚡</span>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Frontend -->
+                <div class="skills-category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🎨</span>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML5 / CSS3</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Responsive Design</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Backend -->
+                <div class="skills-category-card">
+                    <div class="category-header">
+                        <span class="category-icon">⚙️</span>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Express.js</span>
+                                <span class="skill-percent">83%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="83%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Database -->
+                <div class="skills-category-card">
+                    <div class="category-header">
+                        <span class="category-icon">📁</span>
+                        <h3>Database</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: AI -->
+                <div class="skills-category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🧠</span>
+                        <h3>Artificial Intelligence</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Machine Learning (Sklearn)</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Pandas & NumPy</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">OpenCV</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">LLMs & RAG Architectures</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Cybersecurity -->
+                <div class="skills-category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🛡️</span>
+                        <h3>Cybersecurity</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Penetration Testing</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">OWASP Top 10 Auditing</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Linux Admin & Hardening</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Tools (Burp Suite, Nmap, Metasploit, Wireshark)</span>
+                                <span class="skill-percent">87%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="87%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Tools -->
+                <div class="skills-category-card">
+                    <div class="category-header">
+                        <span class="category-icon">🛠️</span>
+                        <h3>Tools & Dev</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Git & GitHub</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="78%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">VS Code</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title"><span class="number-tag">03.</span> Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project: AI Chatbot -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-visual chat-visual">
+                            <div class="cyber-radar"></div>
+                            <div class="cyber-scanner-bar"></div>
+                            <div class="visual-label">RAG ENGINE ACTIVE</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">AI Chatbot</h3>
+                        <p class="project-description">A secure, RAG-enabled chatbot designed to handle enterprise queries with sub-second response times, leveraging local LLMs and vector stores.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">VectorDB</span>
+                            <span class="tech-tag">LLM</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-card-primary">Live Demo</a>
+                            <a href="#" class="btn btn-card-sec">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Lost & Found -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-visual lostfound-visual">
+                            <div class="node-grid"></div>
+                            <div class="searching-pulse"></div>
+                            <div class="visual-label">TRACKING CONNECTED</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Lost & Found System</h3>
+                        <p class="project-description">A decentralized tracking portal with end-to-end encryption, ensuring privacy while helping users recover lost items within campus environments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Crypto API</span>
+                            <span class="tech-tag">NodeJS</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-card-primary">Live Demo</a>
+                            <a href="#" class="btn btn-card-sec">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: ML Prediction -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-visual ml-visual">
+                            <div class="graph-line"></div>
+                            <div class="data-points"></div>
+                            <div class="visual-label">ACCURACY: 99.4%</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Machine Learning Prediction</h3>
+                        <p class="project-description">An advanced predictive model suite utilizing Scikit-learn and Pandas to analyze security logs and detect anomalies with high confidence scoring.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NumPy</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-card-primary">Live Demo</a>
+                            <a href="#" class="btn btn-card-sec">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Cybersecurity Portfolio -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-visual cyberport-visual">
+                            <div class="security-shield-glow"></div>
+                            <div class="status-feed"></div>
+                            <div class="visual-label">THREAT SHIELD ON</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Cybersecurity Portfolio</h3>
+                        <p class="project-description">A vulnerability scanner dashboard visualizing network weaknesses, system threat scores, and real-time mitigation checklists.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Security Auditors</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-card-primary">Live Demo</a>
+                            <a href="#" class="btn btn-card-sec">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Network Scanner -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-visual scanner-visual">
+                            <div class="ping-wave"></div>
+                            <div class="terminal-logs"></div>
+                            <div class="visual-label">SCANNING NETWORKS</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Network Scanner</h3>
+                        <p class="project-description">A lightweight concurrent network mapping tool that highlights open ports, identifies services, and alerts on potential vulnerability vectors.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Sockets</span>
+                            <span class="tech-tag">Multithreading</span>
+                            <span class="tech-tag">CVE API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-card-primary">Live Demo</a>
+                            <a href="#" class="btn btn-card-sec">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Password Manager -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-visual vault-visual">
+                            <div class="locker-keyhole"></div>
+                            <div class="encryption-matrix"></div>
+                            <div class="visual-label">AES-256 ENCRYPTED</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Password Manager</h3>
+                        <p class="project-description">A highly secure local password locker featuring AES-256-GCM encryption, biometric integration, and secure master key derivation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">WebCrypto</span>
+                            <span class="tech-tag">IndexedDB</span>
+                            <span class="tech-tag">AES-GCM</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-card-primary">Live Demo</a>
+                            <a href="#" class="btn btn-card-sec">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Face Recognition Attendance -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-visual face-visual">
+                            <div class="facial-contours"></div>
+                            <div class="camera-bounding-box"></div>
+                            <div class="visual-label">FACE LOCK LOCKED</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Face Recognition Attendance</h3>
+                        <p class="project-description">A real-time attendance management system using OpenCV and deep face recognition embeddings, featuring robust anti-spoofing checks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FaceNet</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-card-primary">Live Demo</a>
+                            <a href="#" class="btn btn-card-sec">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title"><span class="number-tag">04.</span> Professional Journey</h2>
+            
+            <div class="timeline-container">
+                <div class="timeline-line">
+                    <div class="timeline-progress"></div>
+                </div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3 class="timeline-role">AI Mentor</h3>
+                        <p class="timeline-company">Developer Bootcamp & Academy</p>
+                        <p class="timeline-desc">Guiding next-generation developers in machine learning frameworks, LLMs, and prompt engineering, facilitating hands-on bootcamps and building secure pipelines.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2023 - 2025</span>
+                        <h3 class="timeline-role">Cybersecurity Learner</h3>
+                        <p class="timeline-company">Self-Directed Study & Certs</p>
+                        <p class="timeline-desc">Active deep dive into penetration testing labs, CTF competitions (TryHackMe, HackTheBox), and security auditing methodologies to detect zero-day exploits.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2022 - 2023</span>
+                        <h3 class="timeline-role">Freelance Developer</h3>
+                        <p class="timeline-company">Global Client Network</p>
+                        <p class="timeline-desc">Building responsive, modern, secure full-stack web applications for global clients, focusing on clean architecture, API optimization, and secure databases.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2021 - 2022</span>
+                        <h3 class="timeline-role">Open Source Contributor</h3>
+                        <p class="timeline-company">GitHub Dev Communities</p>
+                        <p class="timeline-desc">Contributing security patches, automated tools, and documentation improvements to open-source developer tooling and utility libraries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title"><span class="number-tag">05.</span> Certifications</h2>
+            <div class="certificates-grid">
+                
+                <!-- Cert 1 -->
+                <div class="certificate-card">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="36" height="36" class="cert-svg">
+                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">CompTIA Security+</h3>
+                    <p class="cert-issuer">CompTIA</p>
+                    <span class="cert-code">ID: SEC-PL-89240</span>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="certificate-card">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="36" height="36" class="cert-svg">
+                            <path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">eJPT</h3>
+                    <p class="cert-issuer">eLearnSecurity</p>
+                    <span class="cert-code">ID: EJPT-55291</span>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="certificate-card">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="36" height="36" class="cert-svg">
+                            <path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">eCPPT</h3>
+                    <p class="cert-issuer">eLearnSecurity</p>
+                    <span class="cert-code">ID: ECPPT-77182</span>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="certificate-card">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="36" height="36" class="cert-svg">
+                            <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-3.5h-2V7h2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">Google AI Certification</h3>
+                    <p class="cert-issuer">Google</p>
+                    <span class="cert-code">ID: G-AI-90218</span>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="certificate-card">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="36" height="36" class="cert-svg">
+                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">Cisco Networking (CCNA)</h3>
+                    <p class="cert-issuer">Cisco Systems</p>
+                    <span class="cert-code">ID: CS-NET-34190</span>
+                </div>
+
+                <!-- Cert 6 -->
+                <div class="certificate-card">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="36" height="36" class="cert-svg">
+                            <path fill="currentColor" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c3.31 0 6-2.69 6-6s-2.69-6-6-6-6 2.69-6 6 2.69 6 6 6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">Python Advanced Scripting</h3>
+                    <p class="cert-issuer">Python Institute</p>
+                    <span class="cert-code">ID: PY-ADV-87720</span>
+                </div>
+
+                <!-- Cert 7 -->
+                <div class="certificate-card">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="36" height="36" class="cert-svg">
+                            <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-3.5h-2V7h2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">Machine Learning Specialization</h3>
+                    <p class="cert-issuer">DeepLearning.AI</p>
+                    <span class="cert-code">ID: ML-SPEC-90924</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title"><span class="number-tag">06.</span> Get In Touch</h2>
+            <div class="contact-layout">
+                
+                <div class="contact-info-panel">
+                    <h3 class="panel-subtitle">Let's Secure the Future</h3>
+                    <p class="panel-desc">I am open to discuss freelance projects, partnership opportunities, or technical inquiries. Reach out via the form, or connect through social nodes.</p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📧</span>
+                            <div class="detail-text">
+                                <span class="detail-label">Email Node</span>
+                                <a href="mailto:visaghreji@example.com" class="detail-value">visaghreji@example.com</a>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🌐</span>
+                            <div class="detail-text">
+                                <span class="detail-label">Location Node</span>
+                                <span class="detail-value">Bangalore, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="social-links">
+                        <a href="https://github.com" class="social-badge ripple-btn" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" class="social-badge ripple-btn" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" class="social-badge ripple-btn" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="contact-form-panel">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="form-name" class="form-label">Name</label>
+                            <input type="text" id="form-name" class="form-input" placeholder="Secure Operator Name" required>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-email" class="form-label">Email</label>
+                            <input type="email" id="form-email" class="form-input" placeholder="operator@domain.com" required>
+                            <div class="input-glow"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-subject" class="form-label">Subject</label>
+                            <input type="text" id="form-subject" class="form-input" placeholder="Encryption / Architecture Node" required>
+                            <div class="input-glow"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message" class="form-label">Message Payload</label>
+                            <textarea id="form-message" class="form-textarea" rows="5" placeholder="Encrypt message payload here..." required></textarea>
+                            <div class="input-glow"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit ripple-btn" id="submit-btn">
+                            <span class="btn-text">Transmit Payload</span>
+                            <span class="loader-spinner"></span>
+                        </button>
+                        
+                        <div id="form-status" class="form-status-message"></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="#home" class="footer-logo">
+                    <span class="logo-accent">&lt;</span>VR<span class="logo-accent"> /&gt;</span>
+                </a>
+                <p class="footer-tagline">Designing secure systems, programming intelligent models, auditing secure networks.</p>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Visagh Reji. All rights secured.</p>
+                <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to Top">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
